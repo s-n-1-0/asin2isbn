@@ -1,0 +1,24 @@
+{
+  "name": "asin2isbn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-n-1-0/asin2isbn.git"
+  },
+  "keywords": [
+    "asin"
+  ],
+  "author": "s-n-1-0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s-n-1-0/asin2isbn/issues"
+  },
+  "homepage": "https://github.com/s-n-1-0/asin2isbn#readme"
+}
