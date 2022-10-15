@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/s-n-1-0/asin2isbn/issues"
   },
-  "homepage": "https://github.com/s-n-1-0/asin2isbn#readme"
+  "homepage": "https://github.com/s-n-1-0/asin2isbn#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
 }
