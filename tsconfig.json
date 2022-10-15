@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-      "target": "es2017",
-      "module": "commonjs",
-      "allowJs": true,
-      "declaration": true,
-      "baseUrl": "./src/",
-      "outDir": "dist/"
-    },
-    "exclude": ["node_modules", "dist"]
-  }
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowJs": true,
+    "declaration": true,
+    "baseUrl": "./src/",
+    "outDir": "dist/"
+  },
+  "exclude": ["node_modules", "dist", "tests"]
+}
