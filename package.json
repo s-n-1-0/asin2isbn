@@ -1,7 +1,7 @@
 {
   "name": "asin2isbn",
   "version": "1.0.0",
-  "description": "",
+  "description": "asin to isbn",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
