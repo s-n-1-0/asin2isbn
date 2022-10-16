@@ -31,3 +31,5 @@ console.log(
     "https://www.amazon.co.jp/dp/4799215663/ref=cm_sw_r_tw_dp_5XW9TEXBPTC54CE90CE9"
   )
 );
+console.log(convertUrl2Isbn13("urlerror"));
+console.log("end");
