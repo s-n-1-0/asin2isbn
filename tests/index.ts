@@ -1,5 +1,7 @@
 import {
   convertAsin2Isbn13,
+  convertIsbn,
+  convertIsbn2Url,
   convertUrl2Asin,
   convertUrl2Isbn13,
 } from "../src/";
@@ -31,5 +33,11 @@ console.log(
     "https://www.amazon.co.jp/dp/4799215663/ref=cm_sw_r_tw_dp_5XW9TEXBPTC54CE90CE9"
   )
 );
+
+//URL Error Case
 console.log(convertUrl2Isbn13("urlerror"));
-console.log("end");
+
+//ISBN13 -> ISBN10
+console.log(convertIsbn("9784799215661"));
+//ISBN13 -> URL
+console.log(convertIsbn2Url("9784799215661"));
