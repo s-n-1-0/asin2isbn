@@ -45,12 +45,24 @@ let res3 = convertUrl2Isbn13(
 if (res3.isbn != "") console.log("res3 ISBN : " + res3.isbn);
 ```
 
+## ISBN to URL
+The return value is a string or null.
+```ts
+console.log(convertIsbn2Url("9784799215661")); //https://www.amazon.co.jp/dp/4799215663
+```
+
 ## Others
 
 ### URL to ASIN
 
 ```ts
 convertUrl2Asin("https://....");
+```
+
+### ISBN10 to ISBN13 or ISBN13 to ISBN10
+
+```ts
+console.log(convertIsbn("9784799215661"));
 ```
 
 ## PR / Issues
