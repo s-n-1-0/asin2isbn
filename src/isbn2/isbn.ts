@@ -30,8 +30,9 @@ export function convertIsbn(isbn: string): string | null {
       let n = Number(c);
       return tmp + n * (10 - i);
     }, 0);
-    const checkDigit = 11 - (sum % 11);
-    const isbn10 = isbn.substring(3, 12) + String(checkDigit);
+    const checkDigit = (11 - (sum % 11)) % 11;
+    const checkDigitStr = checkDigit === 10 ? "X" : String(checkDigit);
+    const isbn10 = isbn.substring(3, 12) + checkDigitStr;
     return isbn10;
   } else if (isbn.length == 10) {
     let q = "978" + isbn;
