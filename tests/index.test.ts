@@ -69,12 +69,24 @@ test("convertIsbn2Url", () => {
 /* between isbn */
 test("convertIsbn", () => {
   //10=>13
-  expect(convertIsbn("4799215663")).toBe("9784799215661");
+  expect(convertIsbn("4799215663")).toEqual({
+    isbn13: "9784799215661",
+    isbn10: "4799215663",
+  });
   //13=>10
-  expect(convertIsbn("9784799215661")).toBe("4799215663");
+  expect(convertIsbn("9784040645322")).toEqual({
+    isbn13: "9784040645322",
+    isbn10: "4040645324",
+  });
 
   //13=>10 (cd 10 case)
-  expect(convertIsbn("9784309226712")).toBe("430922671X");
+  expect(convertIsbn("9784309226712")).toEqual({
+    isbn13: "9784309226712",
+    isbn10: "430922671X",
+  });
   //13=>10 (cd 11 case)
-  expect(convertIsbn("9784534059628")).toBe("4534059620");
+  expect(convertIsbn("9784534059628")).toEqual({
+    isbn13: "9784534059628",
+    isbn10: "4534059620",
+  });
 });

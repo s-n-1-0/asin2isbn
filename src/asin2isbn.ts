@@ -14,7 +14,7 @@ export function convertAsin2Isbn13(asin: string): ConvertIsbnResponse {
     };
   let isbn = convertIsbn(asin);
   return {
-    isbn: isbn ?? "",
+    isbn: isbn.isbn13 ?? "",
     error: isbn == null ? "FORMAT" : "",
   };
 }

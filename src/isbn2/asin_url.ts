@@ -5,7 +5,7 @@ import { convertIsbn } from "./isbn";
  */
 export function convertIsbn2Asin(isbn: string) {
   if (isbn.length == 10) return isbn; //ISBN10 == ASIN
-  if (isbn.length == 13) return convertIsbn(isbn);
+  if (isbn.length == 13) return convertIsbn(isbn).isbn10;
   return null;
 }
 /**

@@ -22,9 +22,12 @@ export function getIsbn13Checkdigit(isbn: string) {
   };
 }
 /**
- * ISBN13→ISBN10 or ISBN10→ISBN13
+ * ISBN10or13 → ISBN10and13
  */
-export function convertIsbn(isbn: string): string | null {
+export function convertIsbn(
+  isbn: string
+): { isbn10: string; isbn13: string } | null {
+  let retIsbn: { isbn10: string; isbn13: string } | null = null;
   if (isbn.length == 13) {
     const sum = [...isbn].slice(3, 12).reduce((tmp, c, i) => {
       let n = Number(c);
@@ -33,11 +36,17 @@ export function convertIsbn(isbn: string): string | null {
     const checkDigit = (11 - (sum % 11)) % 11;
     const checkDigitStr = checkDigit === 10 ? "X" : String(checkDigit);
     const isbn10 = isbn.substring(3, 12) + checkDigitStr;
-    return isbn10;
+    retIsbn = {
+      isbn10,
+      isbn13: isbn,
+    };
   } else if (isbn.length == 10) {
     let q = "978" + isbn;
     let isbn13 = getIsbn13Checkdigit(q)?.isbn;
-    return isbn13;
+    retIsbn = {
+      isbn10: isbn,
+      isbn13,
+    };
   }
-  return null;
+  return retIsbn;
 }
