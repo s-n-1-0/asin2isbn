@@ -46,7 +46,9 @@ if (res3.isbn != "") console.log("res3 ISBN : " + res3.isbn);
 ```
 
 ## ISBN to URL
+
 The return value is a string or null.
+
 ```ts
 console.log(convertIsbn2Url("9784799215661")); //https://www.amazon.co.jp/dp/4799215663
 ```
@@ -59,10 +61,16 @@ console.log(convertIsbn2Url("9784799215661")); //https://www.amazon.co.jp/dp/479
 convertUrl2Asin("https://....");
 ```
 
-### ISBN10 to ISBN13 or ISBN13 to ISBN10
+### ISBN10 or ISBN13 → ISBN13 and ISBN10
 
 ```ts
 console.log(convertIsbn("9784799215661"));
+/**
+ * {
+    isbn13: "9784799215661",
+    isbn10: "4799215663",
+  }
+ */
 ```
 
 ## PR / Issues
