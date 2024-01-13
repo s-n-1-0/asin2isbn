@@ -1,32 +1,35 @@
 import {
-  convertAsin2Isbn13,
+  convertAsin2Isbn,
   convertIsbn,
   convertIsbn2Url,
   convertUrl2Asin,
-  convertUrl2Isbn13,
+  convertUrl2Isbn,
 } from "../src/";
 
 /**
  * convertAsin2Isbn13 tests
  */
 test("convertAsin2Isbn13 : paper asin", () => {
-  let res = convertAsin2Isbn13("4596708460");
+  let res = convertAsin2Isbn("4596708460");
   expect(res).toEqual({
     error: "",
-    isbn: "9784596708465",
+    isbn10: "4596708460",
+    isbn13: "9784596708465",
   });
 
-  let res2 = convertAsin2Isbn13("4799215663");
+  let res2 = convertAsin2Isbn("4799215663");
   expect(res2).toEqual({
     error: "",
-    isbn: "9784799215661",
+    isbn10: "4799215663",
+    isbn13: "9784799215661",
   });
 });
 
 test("convertAsin2Isbn13 : kindle asin", () => {
-  expect(convertAsin2Isbn13("B09MYHB3X3")).toEqual({
+  expect(convertAsin2Isbn("B09MYHB3X3")).toEqual({
     error: "KINDLE",
-    isbn: "",
+    isbn10: "",
+    isbn13: "",
   });
 });
 
@@ -43,20 +46,22 @@ test("convertUrl2Asin : paper", () => {
 
 test("convertUrl2Isbn13 : paper", () => {
   expect(
-    convertUrl2Isbn13(
+    convertUrl2Isbn(
       "https://www.amazon.co.jp/dp/4799215663/ref=cm_sw_r_tw_dp_5XW9TEXBPTC54CE90CE9"
     )
   ).toEqual({
     error: "",
-    isbn: "9784799215661",
+    isbn10: "4799215663",
+    isbn13: "9784799215661",
   });
 });
 
 //URL Error Case
 test("convertUrl2Isbn13 : url error", () => {
-  expect(convertUrl2Isbn13("urlerror")).toEqual({
+  expect(convertUrl2Isbn("urlerror")).toEqual({
     error: "FORMAT",
-    isbn: "",
+    isbn10: "",
+    isbn13: "",
   });
 });
 

@@ -1,4 +1,4 @@
-import { convertAsin2Isbn13 } from "./asin2isbn";
+import { convertAsin2Isbn } from "./asin2isbn";
 import { ConvertIsbnResponse } from "./interfaces";
 export function convertUrl2Asin(url: string) {
   try {
@@ -11,12 +11,13 @@ export function convertUrl2Asin(url: string) {
     return "";
   }
 }
-export function convertUrl2Isbn13(url: string): ConvertIsbnResponse {
+export function convertUrl2Isbn(url: string): ConvertIsbnResponse {
   let asin = convertUrl2Asin(url);
   if (asin == "")
     return {
-      isbn: "",
+      isbn10: "",
+      isbn13: "",
       error: "FORMAT",
     };
-  return convertAsin2Isbn13(asin);
+  return convertAsin2Isbn(asin);
 }
