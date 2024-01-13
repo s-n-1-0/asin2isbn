@@ -11,19 +11,15 @@ npm install asin2isbn
 ## Import
 
 ```ts
-import {
-  convertAsin2Isbn13,
-  convertUrl2Asin,
-  convertUrl2Isbn13,
-} from "asin2isbn";
+import { convertAsin2Isbn, convertUrl2Asin, convertUrl2Isbn } from "asin2isbn";
 ```
 
 ## ASIN to ISBN
 
 ```ts
-let res = convertAsin2Isbn13("4596708460");
+let res = convertAsin2Isbn("4596708460");
 if (res.error != "") {
-  console.log("ISBN : " + res.isbn);
+  console.log("ISBN : " + res.isbn13);
 }
 ```
 
@@ -32,17 +28,17 @@ if (res.error != "") {
 ### For Kindle ASIN?
 
 ```ts
-let res2 = convertAsin2Isbn13("B09MYHB3X3");
+let res2 = convertAsin2Isbn("B09MYHB3X3");
 console.log(res2.error); // => "KINDLE"
 ```
 
 ## Amazon URL to ISBN
 
 ```ts
-let res3 = convertUrl2Isbn13(
+let res3 = convertUrl2Isbn(
   "https://www.amazon.co.jp/dp/4799215663/ref=cm_sw_r_tw_dp_5XW9TEXBPTC54CE90CE9"
 );
-if (res3.isbn != "") console.log("res3 ISBN : " + res3.isbn);
+if (res3.isbn != "") console.log("res3 ISBN : " + res3.isbn13);
 ```
 
 ## ISBN to URL
